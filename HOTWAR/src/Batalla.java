@@ -1,3 +1,4 @@
+package COLWAR;
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -5,22 +6,24 @@ import javax.swing.JProgressBar;
 import javax.swing.JSlider;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
-
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Random;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Image;
 
-public class Batalla extends JPanel {
+public class Batalla extends JPanel implements ActionListener {
 	private JTextField nomp;
 	private JSlider atk,def;
 	private JTextField textField_cohete;
@@ -41,10 +44,38 @@ public class Batalla extends JPanel {
 	private JLabel numrondas;
 	private JLabel fondo;
 	private Random r = new Random();
-	int valorDado = r.nextInt(6)+1;
+	int valorDado = r.nextInt(5)+1;
+	private int finalizar = 0;
+	private int vidas;
+	ArrayList <String> resumen =   new ArrayList<String>(); 
 	/**
 	 * Create the panel.
 	 */
+	public int getvidas() {
+		return this.getvidas();
+	}
+	
+	public int setvidas(int vidas) {
+		return this.vidas = vidas;
+	}
+	
+	public String getataque() {
+		return null;
+	}
+	
+	public static Object get (int i) {
+		return null;
+	}
+	
+	public int getsize() {
+		return 0;
+		
+	}
+	public void actionPerformed(ActionEvent e) {
+
+		
+		
+	}
 	public Batalla(int cantidad, String tipos[], String nom[]) {
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
@@ -128,12 +159,12 @@ public class Batalla extends JPanel {
 		atack.setBounds(417, 511, 163, 76);
 		add(atack);
 
-		JLabel fotoatak = new JLabel("atakc");
+		JLabel fotoatak = new JLabel();
 		fotoatak.setIcon(new ImageIcon(new ImageIcon("assets/fondos/atacar.png").getImage().getScaledInstance( 86, 73, Image.SCALE_DEFAULT)));
 		fotoatak.setBounds(322, 169, 96, 83);
 		add(fotoatak);
 
-		JLabel fotodef = new JLabel("def");
+		JLabel fotodef = new JLabel();
 		fotodef.setIcon(new ImageIcon(new ImageIcon("assets/fondos/defens.png").getImage().getScaledInstance( 76, 83, Image.SCALE_DEFAULT)));
 		fotodef.setBounds(572, 169, 96, 83);
 		add(fotodef);
@@ -147,17 +178,17 @@ public class Batalla extends JPanel {
 		nomicon.setEditable(false);
 		nomicon.setText("Mariano");
 		nomicon.setColumns(10);
-		nomicon.setBounds(933, 44, 96, 14);
+		nomicon.setBounds(917, 43, 96, 14);
 		add(nomicon);
 
 		vida = new JProgressBar();
 		vida.setValue(100);
 		vida.setForeground(Color.GREEN);
-		vida.setBounds(933, 69, 146, 14);
+		vida.setBounds(917, 68, 146, 14);
 		add(vida);
 
 		JLabel image = new JLabel("New label");
-		image.setBounds(883, 44, 40, 40);
+		image.setBounds(867, 43, 40, 40);
 		add(image);
 		
 		JLabel misilesrest = new JLabel("New label");
@@ -244,13 +275,14 @@ public class Batalla extends JPanel {
 						def.setValue(0);
 						atk.setValue(0);
 						if(equipo ==0 ) {
+							
 							nomp.setText(nom[1]);
 							equipoa = s = (String) comboBox.getSelectedItem();
 							int equipo1ma = mA;
 							int equipo1md = mD;
 							String equipo1Obj = equipoa;
-							
-							
+							resumen.add(nom[0]+" a atacado con "+ equipo1ma+" a "+ equipo1Obj +" y se ha defendido con "+equipo1md+"\n");
+				
 						}
 						if(equipo==1) {
 							nomp.setText(nom[2]);
@@ -258,7 +290,7 @@ public class Batalla extends JPanel {
 							int equipo2ma = mA;
 							int equipo2md = mD;
 							String equipo1Obj = equipoa;
-							
+							resumen.add(nom[1]+" a atacado con "+ equipo2ma+" a "+ equipo1Obj +" y se ha defendido con "+equipo2md+"\n");
 						}
 						if(equipo==2) {
 							JOptionPane.showInternalMessageDialog(null, "Adios", "Error de misiles", 0);
@@ -266,6 +298,9 @@ public class Batalla extends JPanel {
 							int equipo3ma = mA;
 							int equipo3md = mD;
 							String equipo1Obj = equipoa;
+							resumen.add(nom[2]+" a atacado con "+ equipo3ma+" a "+ equipo1Obj +" y se ha defendido con "+equipo3md+"\n");
+							finalizar = 1;
+							finalizar();
 							
 						}
 						equipo=equipo+1;
@@ -654,4 +689,15 @@ public class Batalla extends JPanel {
 
 		
 	}
+
+	
+	public void finalizar() {
+		
+			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
+			Marco.remove(this);
+			Marco.getContentPane().add(new FinalRonda(resumen));
+			Marco.setVisible(true);
+		
+	}
+
 }

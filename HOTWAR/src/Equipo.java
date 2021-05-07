@@ -1,4 +1,4 @@
-
+package COLWAR;
 
 public class Equipo{
 

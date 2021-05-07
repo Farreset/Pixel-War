@@ -1,3 +1,6 @@
+package COLWAR;
+
+
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JSlider;
@@ -216,7 +219,7 @@ public class Barra extends JPanel implements ActionListener {
 
 
 	}
-	@Override
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
