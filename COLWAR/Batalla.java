@@ -204,6 +204,37 @@ textField_1.setColumns(10);
 		numrondas.setBounds(572, 14, 69, 67);
 		add(numrondas);
 
+		lblNewLabel_1 = new JLabel();
+		lblNewLabel_1.setIcon(new ImageIcon(new ImageIcon("assets/fondos/black.png").getImage().getScaledInstance(400,800, Image.SCALE_DEFAULT)));
+		lblNewLabel_1.setBounds(867, 0, 233, 700);
+		add(lblNewLabel_1);
+
+		JLabel imgrest = new JLabel("New label");
+		imgrest.setIcon(new ImageIcon(new ImageIcon("assets/botones/restar.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
+		imgrest.setBounds(264, 262, 48, 48);
+		add(imgrest);
+
+		JLabel imagsum1 = new JLabel("New label");
+		imagsum1.setIcon(new ImageIcon(new ImageIcon("assets/botones/sumar.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
+		imagsum1.setBounds(428, 262, 48, 48);
+		add(imagsum1);
+
+		JLabel imagrest2 = new JLabel("New label");
+		imagrest2.setIcon(new ImageIcon(new ImageIcon("assets/botones/restar.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
+		imagrest2.setBounds(514, 263, 48, 48);
+		add(imagrest2);
+
+		JLabel imagsum2 = new JLabel("New label");
+		imagsum2.setIcon(new ImageIcon(new ImageIcon("assets/botones/sumar.png").getImage().getScaledInstance(48, 48, Image.SCALE_DEFAULT)));
+		imagsum2.setBounds(678, 262, 48, 48);
+		add(imagsum2);
+
+		fondo = new JLabel();
+		fondo.setIcon(new ImageIcon(new ImageIcon("assets/fondos/fondoBatalla"+(valorDado)+".png").getImage().getScaledInstance(1200,800, Image.SCALE_DEFAULT)));
+		fondo.setBounds(0, 0, 1100, 700);
+		add(fondo);
+
+	
 		String tipo;
 	String nombre;
 		String a;
@@ -511,7 +542,7 @@ textField_1.setColumns(10);
 		});
 		add(def);
 	}
-	public String Resumen (cantidad, cantidad, toString, toString){
+	public String Resumen (){
         String mensaje = nom[equipo] + " a atacado con " + equipoma + " a " + equipoObj + " y se ha defendido con " + equipomd + "\n";
         return mensaje;
     }
