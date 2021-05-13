@@ -8,8 +8,6 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
-
-
 import javax.swing.JTextPane;
 import javax.swing.JScrollBar;
 import javax.swing.JTextField;
@@ -23,9 +21,8 @@ import javax.swing.JOptionPane;
 
 import java.awt.Choice;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
+import java.awt.Font;
 import java.awt.Image;
-import java.awt.Toolkit;
 
 import javax.swing.JLabel;
 
@@ -47,16 +44,25 @@ public class Eleccion extends JPanel implements ActionListener{
 	JComboBox <String> pers1,pers2,pers3,pers4,pers5,pers6,pers7,pers8,pers9,pers10;
 	String fotos[] = {null,"Stickman","Mario", "Link", "Pikachu","Donkey Kong","Sonic","Creeper","Goku","Ratchet & Clank","Sub-Zero"};
 	String s;
+	private Font fuente;
 	int cantidades;
 
 	public Eleccion(int num) {
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
 
-		volver = new JButton("VOLVER");
-		volver.setBounds(44, 580, 110, 50);
+	
+		fuente = new Font("Calibri",1, 19);
+		volver = new JButton(new ImageIcon(new ImageIcon("assets/botones/volver1.png").getImage().getScaledInstance(150, 72, Image.SCALE_DEFAULT)));
+		volver.setBounds(44, 570, 150, 72);
+		volver.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/volver2.png").getImage().getScaledInstance(150, 72, Image.SCALE_DEFAULT)));
+		volver.setFocusable(true);
+		volver.setBorder(null);
+		volver.setFocusPainted(false);
+		volver.setContentAreaFilled(false);
+		
 		add(volver);
-
+		
 		start = new JButton("EMPEZAR");
 		start.setBounds(946, 580, 110, 50);
 		add(start);
@@ -65,12 +71,17 @@ public class Eleccion extends JPanel implements ActionListener{
 		start.addActionListener(this);
 
 		plantillas(num);
-
-
-		fondo = new JLabel();
+		
+		fondo = new JLabel(new ImageIcon(new ImageIcon("assets/fondos/fondoEleccion.png").getImage().getScaledInstance(1200, 700, Image.SCALE_DEFAULT)));
 		fondo.setBounds(0, 0, 1100, 700);
-		fondo.setIcon(new ImageIcon(new ImageIcon("assets/fondos/").getImage().getScaledInstance(1100, 700, Image.SCALE_DEFAULT)));
 		add(fondo);
+		
+		textField_1.setFont(fuente);
+		textField_2.setFont(fuente);
+		textField_3.setFont(fuente);
+	
+		
+
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -346,7 +357,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -383,7 +394,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -419,7 +430,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -452,7 +463,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -489,7 +500,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -525,7 +536,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -557,7 +568,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -588,7 +599,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -625,7 +636,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -661,7 +672,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -693,7 +704,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -725,7 +736,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -756,7 +767,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -793,7 +804,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -829,7 +840,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -861,7 +872,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -893,7 +904,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -924,7 +935,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_6 = new JTextField();
 			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 20);
+			textField_6.setBounds(629, 84, 221, 23);
 			add(textField_6);
 
 
@@ -956,7 +967,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -993,7 +1004,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -1029,7 +1040,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -1061,7 +1072,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -1093,7 +1104,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -1124,7 +1135,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_6 = new JTextField();
 			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 20);
+			textField_6.setBounds(629, 84, 221, 23);
 			add(textField_6);
 
 
@@ -1157,7 +1168,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_7 = new JTextField();
 			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 20);
+			textField_7.setBounds(629, 188, 221, 23);
 			add(textField_7);
 
 
@@ -1190,7 +1201,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -1227,7 +1238,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -1263,7 +1274,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -1295,7 +1306,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -1327,7 +1338,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -1358,7 +1369,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_6 = new JTextField();
 			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 20);
+			textField_6.setBounds(629, 84, 221, 23);
 			add(textField_6);
 
 
@@ -1391,7 +1402,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_7 = new JTextField();
 			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 20);
+			textField_7.setBounds(629, 188, 221, 23);
 			add(textField_7);
 
 
@@ -1424,7 +1435,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_8 = new JTextField();
 			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 20);
+			textField_8.setBounds(629, 292, 221, 23);
 			add(textField_8);
 
 			pers8 = new JComboBox<String>(fotos);
@@ -1455,7 +1466,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -1492,7 +1503,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -1528,7 +1539,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -1560,7 +1571,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -1592,7 +1603,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -1623,7 +1634,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_6 = new JTextField();
 			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 20);
+			textField_6.setBounds(629, 84, 221, 23);
 			add(textField_6);
 
 
@@ -1656,7 +1667,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_7 = new JTextField();
 			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 20);
+			textField_7.setBounds(629, 188, 221, 23);
 			add(textField_7);
 
 
@@ -1689,7 +1700,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_8 = new JTextField();
 			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 20);
+			textField_8.setBounds(629, 292, 221, 23);
 			add(textField_8);
 
 			pers8 = new JComboBox<String>(fotos);
@@ -1721,7 +1732,7 @@ public class Eleccion extends JPanel implements ActionListener{
 	
 			textField_9 = new JTextField();
 			textField_9.setColumns(10);
-			textField_9.setBounds(629, 396, 221, 20);
+			textField_9.setBounds(629, 396, 221, 23);
 			add(textField_9);
 
 			
@@ -1753,7 +1764,7 @@ public class Eleccion extends JPanel implements ActionListener{
 			textField.setColumns(10);
 
 			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 20);
+			textField_1.setBounds(85, 84, 221, 23);
 			add(textField_1);
 			textField_1.setColumns(10);
 
@@ -1790,7 +1801,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 20);
+			textField_2.setBounds(85, 188, 221, 23);
 			add(textField_2);
 
 			pers2 = new JComboBox<String>(fotos);
@@ -1826,7 +1837,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 20);
+			textField_3.setBounds(85, 292, 221, 23);
 			add(textField_3);
 
 			pers3 = new JComboBox<String>(fotos);
@@ -1858,7 +1869,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_4 = new JTextField();
 			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 20);
+			textField_4.setBounds(85, 396, 221, 23);
 			add(textField_4);
 
 			pers4 = new JComboBox<String>(fotos);
@@ -1890,7 +1901,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_5 = new JTextField();
 			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 20);
+			textField_5.setBounds(85, 500, 221, 23);
 			add(textField_5);
 
 
@@ -1921,7 +1932,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_6 = new JTextField();
 			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 20);
+			textField_6.setBounds(629, 84, 221, 23);
 			add(textField_6);
 
 
@@ -1954,7 +1965,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_7 = new JTextField();
 			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 20);
+			textField_7.setBounds(629, 188, 221, 23);
 			add(textField_7);
 
 
@@ -1987,7 +1998,7 @@ public class Eleccion extends JPanel implements ActionListener{
 
 			textField_8 = new JTextField();
 			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 20);
+			textField_8.setBounds(629, 292, 221, 23);
 			add(textField_8);
 
 			pers8 = new JComboBox<String>(fotos);
@@ -2019,7 +2030,7 @@ public class Eleccion extends JPanel implements ActionListener{
 	
 			textField_9 = new JTextField();
 			textField_9.setColumns(10);
-			textField_9.setBounds(629, 396, 221, 20);
+			textField_9.setBounds(629, 396, 221, 23);
 			add(textField_9);
 
 			
@@ -2051,7 +2062,7 @@ public class Eleccion extends JPanel implements ActionListener{
 	
 			textField_10 = new JTextField();
 			textField_10.setColumns(10);
-			textField_10.setBounds(629, 500, 221, 20);
+			textField_10.setBounds(629, 500, 221, 23);
 			add(textField_10);
 
 	
