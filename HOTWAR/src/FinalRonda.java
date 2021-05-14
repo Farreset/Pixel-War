@@ -4,48 +4,68 @@ import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneConstants;
+import javax.swing.SwingUtilities;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Color;
 
-public class FinalRonda extends JPanel {
+public class FinalRonda extends JPanel implements ActionListener{
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JScrollPane scroll;
 	public static String text;
-	
-
-	public FinalRonda(ArrayList resumen) {
-
+	private JButton continuar;
+	private int cantidad;
+	private String tipos[];
+	private String nom[];
+	private JTextArea textArea;
+	public FinalRonda(String toString, int cantidad, String tipos[], String nom[]) {
+		this.cantidad = cantidad;
+		this.tipos = tipos;
+		this.nom = nom;
+		
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
+		continuar = new JButton("continuar");
+		continuar.setBounds(468, 533, 163, 76);
+		add(continuar);
+		continuar.addActionListener(this);
+			  
 		
-	    	JScrollBar scrollBar = new JScrollBar();
-			scrollBar.setBounds(1044, 131, 40, 376);
-			  scroll = new JScrollPane(textField);
-		        scroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-
-			add(scrollBar);
-			
-			textField = new JTextField();
-			textField.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 15));
-			textField.setText(resumen.toString());
-			
-			textField.setBounds(0, 131, 1044, 376);
-			textField.setEditable(false); // set textArea non-editable
+		textArea = new JTextArea(Batalla.texto);
+		textArea.setForeground(Color.GREEN);
+		textArea.setEnabled(false);
+		textArea.setFont(new Font("Bahnschrift", Font.BOLD, 25));
+		textArea.setBounds(0, 100, 1100, 422);
+		add(textArea);
 		
-			textField.setColumns(10);
-			add(textField);
+		JLabel Resumen = new JLabel("New label");
+		Resumen.setBounds(367, 11, 341, 78);
+		add(Resumen);
+		
 		JLabel lblNewLabel = new JLabel("New label");
 		lblNewLabel.setBounds(0, 0, 1084, 661);
 		add(lblNewLabel);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==continuar) {
+			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
+			Marco.remove(this);
+			Marco.getContentPane().add(new Batalla(this.cantidad, this.tipos, this.nom));
+			Marco.setVisible(true);
+		}
+		
 	}
 }
