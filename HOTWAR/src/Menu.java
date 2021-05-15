@@ -1,10 +1,9 @@
-package COLWAR;
+
 
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -24,7 +23,6 @@ public class Menu extends JPanel implements ActionListener{
 	public Menu() {
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
-		
 
 		boton1 = new JButton(new ImageIcon(new ImageIcon("assets/botones/jugar1.png").getImage().getScaledInstance(200, 82, Image.SCALE_DEFAULT)));
 		boton2 = new JButton(new ImageIcon(new ImageIcon("assets/botones/reglas1.png").getImage().getScaledInstance(200, 82, Image.SCALE_DEFAULT)));
@@ -119,8 +117,10 @@ public class Menu extends JPanel implements ActionListener{
 			Marco.setVisible(true);
 		}
 		if(e.getSource()==boton3) {
-	
-			
+			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
+			Marco.remove(this);
+			Marco.getContentPane().add(new Barra());
+			Marco.setVisible(true);
 		}
 		if(e.getSource()==boton4) {
 

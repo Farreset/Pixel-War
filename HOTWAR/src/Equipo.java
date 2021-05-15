@@ -1,16 +1,18 @@
-package COLWAR;
-
 public class Equipo{
 
 	String Nombre;
 	static int hp, misil;
 	String tipo;
+	int misila, misild;
 	
 	public Equipo(String tipo, String nom){
 		
 		this.Nombre=nom;
 		this.tipo = tipo;
+		this.hp=gethptipo(tipo);
+		this.misil=getmisilestipo(tipo);
 	}
+	//se passa la vida de cada tipo a la batalla
 	public static int gethptipo(String tipo) {
 		if(tipo.equals("Stickman")) {
 			hp = 200;
@@ -18,7 +20,7 @@ public class Equipo{
 		if(tipo.equals("Link")) {
 			hp = 200;
 		}
-		if(tipo.equals("Creeper")) {
+		if(tipo.equals("Link")) {
 			hp = 200;
 		}
 		if(tipo.equals("Sonic")) {
@@ -42,14 +44,10 @@ public class Equipo{
 		if(tipo.equals("Sub-Zero")) {
 			hp = 200;
 		}
-		if(tipo.equals("Goku")) {
-			hp = 200;
-		}
-		
 		
 		return hp;
 	}
-	
+	//se passa los missiles de cada tipo a la batalla
 	public static int getmisilestipo(String tipo) {
 		if(tipo.equals("Stickman")) {
 			misil = 50;
@@ -57,7 +55,7 @@ public class Equipo{
 		if(tipo.equals("Link")) {
 			misil = 50;
 		}
-		if(tipo.equals("Creeper")) {
+		if(tipo.equals("Link")) {
 			misil = 50;
 		}
 		if(tipo.equals("Sonic")) {
@@ -68,26 +66,23 @@ public class Equipo{
 		}
 		if(tipo.equals("Donkey Kong")) {
 			misil = 20;
-
 		}
 		if(tipo.equals("Clank")) {
 			misil = 20;
 		}
 		if(tipo.equals("Mario")) {
 			misil = 50;
-		}
+		}	
 		if(tipo.equals("Pikachu")) {
 			misil = 50;
 		}
 		if(tipo.equals("Sub-Zero")) {
 			misil = 50;
 		}
-		if(tipo.equals("Goku")) {
-			misil = 50;
-		}
 		
 		return misil;
 	}
+	//se passa la respectiva imagen del jugador a la batalla
 	public static String foto(String tipo) {
 		String imagen = tipo;
 		
@@ -129,15 +124,28 @@ public class Equipo{
 	}
 	
 	
-	
-	public void recibirmisiles(int misilesE, int misilesD) {
+	public int recibirmisiles(String nome, int cantidad, String nom, int hp, int misilesE, int misilesD) {
+	int cont=0;
 	int vida;
+	String jugador[] = new String[cantidad];
+	jugador[cont] = nom; 
+	String jugadorO[] = new String[cantidad];
+	jugadorO[cont] = nome; 		
 	
-		misilesD = misilesD/2;
-		
+	if(cont == cantidad) {
+	for(int i = 0; i < cantidad;i++) {
+		for(int y = 0; y < cantidad;y++) {
+		if(jugador[i] == jugadorO[y]) {
+			
+		}
+		}
+	}
+	}
 		vida = misilesE - misilesD;
 		
-		this.hp = this.hp-vida;
+		hp = hp-vida;
+		vida=0;
+		return hp;	
 	}
 	
 	public String getNombre(){

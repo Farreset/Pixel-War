@@ -1,5 +1,3 @@
-package COLWAR;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -51,7 +49,7 @@ public class Eleccion extends JPanel implements ActionListener{
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
 
-	
+
 		fuente = new Font("Calibri",1, 19);
 		volver = new JButton(new ImageIcon(new ImageIcon("assets/botones/volver1.png").getImage().getScaledInstance(150, 72, Image.SCALE_DEFAULT)));
 		volver.setBounds(44, 570, 150, 72);
@@ -60,9 +58,9 @@ public class Eleccion extends JPanel implements ActionListener{
 		volver.setBorder(null);
 		volver.setFocusPainted(false);
 		volver.setContentAreaFilled(false);
-		
+
 		add(volver);
-		
+
 		start = new JButton("EMPEZAR");
 		start.setBounds(946, 580, 110, 50);
 		add(start);
@@ -71,16 +69,14 @@ public class Eleccion extends JPanel implements ActionListener{
 		start.addActionListener(this);
 
 		plantillas(num);
-		
+
 		fondo = new JLabel(new ImageIcon(new ImageIcon("assets/fondos/fondoEleccion.png").getImage().getScaledInstance(1200, 700, Image.SCALE_DEFAULT)));
 		fondo.setBounds(0, 0, 1100, 700);
 		add(fondo);
-		
-		textField_1.setFont(fuente);
-		textField_2.setFont(fuente);
-		textField_3.setFont(fuente);
-	
-		
+
+
+
+
 
 	}
 
@@ -153,7 +149,7 @@ public class Eleccion extends JPanel implements ActionListener{
 				String s3 =	s = (String) pers3.getSelectedItem();
 				String s4 =	s = (String) pers4.getSelectedItem();
 				String s5 =	s = (String) pers5.getSelectedItem();
-				if(cantidades == 4 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null) {
+				if(cantidades == 5 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null) {
 					JOptionPane.showInternalMessageDialog(null, "ELIGE TIPO DE EQUIPO", "Error de tipo de equipo", 0);
 				}
 
@@ -214,7 +210,7 @@ public class Eleccion extends JPanel implements ActionListener{
 				String s5 =	s = (String) pers5.getSelectedItem();
 				String s6 =	s = (String) pers6.getSelectedItem();
 				String s7 =	s = (String) pers6.getSelectedItem();
-				if(cantidades == 6 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null) {
+				if(cantidades == 7 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null) {
 
 					JOptionPane.showInternalMessageDialog(null, "ELIGE TIPO DE EQUIPO", "Error de tipo de equipo", 0);
 
@@ -247,7 +243,7 @@ public class Eleccion extends JPanel implements ActionListener{
 				String s6 =	s = (String) pers6.getSelectedItem();
 				String s7 =	s = (String) pers7.getSelectedItem();
 				String s8 =	s = (String) pers8.getSelectedItem();
-				if(cantidades == 6 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null) {
+				if(cantidades == 8 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null) {
 
 					JOptionPane.showInternalMessageDialog(null, "ELIGE TIPO DE EQUIPO", "Error de tipo de equipo", 0);
 
@@ -280,7 +276,7 @@ public class Eleccion extends JPanel implements ActionListener{
 				String s7 =	s = (String) pers7.getSelectedItem();
 				String s8 =	s = (String) pers8.getSelectedItem();
 				String s9 =	s = (String) pers8.getSelectedItem();
-				if(cantidades == 6 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null|| s9 == null) {
+				if(cantidades == 9 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null|| s9 == null) {
 
 					JOptionPane.showInternalMessageDialog(null, "ELIGE TIPO DE EQUIPO", "Error de tipo de equipo", 0);
 
@@ -314,12 +310,12 @@ public class Eleccion extends JPanel implements ActionListener{
 				String s8 =	s = (String) pers8.getSelectedItem();
 				String s9 =	s = (String) pers8.getSelectedItem();
 				String s10 =	s = (String) pers8.getSelectedItem();
-				if(cantidades == 6 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null|| s9 == null|| s10 == null) {
+				if(cantidades == 10 && s1 == null || s2 == null || s3 == null || s4 == null || s5 == null || s6 == null || s7 == null|| s8 == null|| s9 == null|| s10 == null) {
 
 					JOptionPane.showInternalMessageDialog(null, "ELIGE TIPO DE EQUIPO", "Error de tipo de equipo", 0);
 
 				}
-				else if(textField_1.getText().equals("") || textField_2.getText().equals("") || textField_3.getText().equals("")|| textField_4.getText().equals("")|| textField_5.getText().equals("")||textField_6.getText().equals("")||textField_7.getText().equals("")||textField_8.getText().equals("")) {
+				else if(textField_1.getText().equals("") || textField_2.getText().equals("") || textField_3.getText().equals("")|| textField_4.getText().equals("")|| textField_5.getText().equals("")||textField_6.getText().equals("")||textField_7.getText().equals("")||textField_8.getText().equals("")||textField_9.getText().equals("")||textField_10.getText().equals("")) {
 					JOptionPane.showInternalMessageDialog(null, "ELIGE NOMBRE DE EQUIPO", "Error de nombre de equipo", 0);
 				}
 				else if(textField_1.getText().equals(textField_2.getText()) || textField_1.getText().equals(textField_3.getText()) || textField_2.getText().equals(textField_3.getText())||textField_1.getText().equals(textField_4.getText())||textField_2.getText().equals(textField_4.getText())||textField_3.getText().equals(textField_4.getText())||textField_1.getText().equals(textField_5.getText())||textField_2.getText().equals(textField_5.getText())||textField_3.getText().equals(textField_5.getText())||textField_4.getText().equals(textField_5.getText())||textField_1.getText().equals(textField_6.getText())||textField_2.getText().equals(textField_6.getText())||textField_3.getText().equals(textField_6.getText())||textField_4.getText().equals(textField_6.getText())||textField_5.getText().equals(textField_6.getText())||textField_1.getText().equals(textField_7.getText())||textField_2.getText().equals(textField_7.getText())||textField_3.getText().equals(textField_7.getText())||textField_4.getText().equals(textField_7.getText())||textField_5.getText().equals(textField_7.getText())||textField_6.getText().equals(textField_7.getText())||textField_1.getText().equals(textField_8.getText())||textField_2.getText().equals(textField_8.getText())||textField_3.getText().equals(textField_8.getText())||textField_4.getText().equals(textField_8.getText())||textField_5.getText().equals(textField_8.getText())||textField_6.getText().equals(textField_8.getText())||textField_7.getText().equals(textField_8.getText())||textField_1.getText().equals(textField_9.getText())||textField_2.getText().equals(textField_9.getText())||textField_3.getText().equals(textField_9.getText())||textField_4.getText().equals(textField_9.getText())||textField_5.getText().equals(textField_9.getText())||textField_6.getText().equals(textField_9.getText())||textField_7.getText().equals(textField_9.getText())||textField_8.getText().equals(textField_9.getText())||textField_1.getText().equals(textField_10.getText())||textField_2.getText().equals(textField_10.getText())||textField_3.getText().equals(textField_10.getText())||textField_4.getText().equals(textField_10.getText())||textField_5.getText().equals(textField_10.getText())||textField_6.getText().equals(textField_10.getText())||textField_7.getText().equals(textField_10.getText())||textField_8.getText().equals(textField_10.getText())||textField_9.getText().equals(textField_10.getText())) {
@@ -337,1757 +333,366 @@ public class Eleccion extends JPanel implements ActionListener{
 			}
 		}
 
-
-
 	}
-
-
-
-
 
 	public void plantillas(int cantidad) {
 		this.cantidades = cantidad;
-		if (cantidad == 3) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+		for(int i = 0; i < cantidad-1; i++) {
+			if (i == 1) {
+				textField = new JTextField();
+				textField.setText("EQUIPO 1");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(10, 84, 65, 20);
+				add(textField);
+				textField.setColumns(10);
+
+				textField_1 = new JTextField();
+				textField_1.setBounds(85, 84, 221, 23);
+				add(textField_1);
+				textField_1.setColumns(10);
+
+				pers1 = new JComboBox<String>(fotos);
+				pers1.setBounds(312, 84, 127, 20);
+				add(pers1);
+
+				pers1.addActionListener(new ActionListener() {
+
+					public void actionPerformed(ActionEvent ae) {
+
+						s = (String) pers1.getSelectedItem();
+						imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq.setBounds(430, 48, 96, 93);
+					}
+				});
+
+				imgEq = new JLabel(new ImageIcon());
+				add(imgEq);
+
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 2");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(10, 188, 65, 20);
+				add(textField);
+				textField.setColumns(10);
+
+				textField_2 = new JTextField();
+				textField_2.setColumns(10);
+				textField_2.setBounds(85, 188, 221, 23);
+				add(textField_2);
+
+				pers2 = new JComboBox<String>(fotos);
+				pers2.setBounds(312, 188, 127, 20);
+				add(pers2);
+
+				pers2.addActionListener(new ActionListener() {
+
+					public void actionPerformed(ActionEvent ae) {
+
+						s = (String) pers2.getSelectedItem();
+						imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq1.setBounds(430, 152, 96, 93);
+					}
+				});
+
+				imgEq1 = new JLabel(new ImageIcon());
+				add(imgEq1);
+
+				//***************************************************************************************//
+
+				textField = new JTextField();
+				textField.setText("EQUIPO 3");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(10, 292, 65, 20);
+				add(textField);
+				textField.setColumns(10);
+
+
+				textField_3 = new JTextField();
+				textField_3.setColumns(10);
+				textField_3.setBounds(85, 292, 221, 23);
+				add(textField_3);
+
+				pers3 = new JComboBox<String>(fotos);
+				pers3.setBounds(312, 292, 127, 20);
+				add(pers3);
+
+				pers3.addActionListener(new ActionListener() {
+
+					public void actionPerformed(ActionEvent ae) {
+
+						s = (String) pers3.getSelectedItem();
+						imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq2.setBounds(430, 256, 96, 93);
+					}
+				});
+
+				imgEq2 = new JLabel(new ImageIcon());
+				add(imgEq2);
+				textField_1.setFont(fuente);
+				textField_2.setFont(fuente);
+				textField_3.setFont(fuente);
+
+			}
+
+			else if (i == 2) {
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 4");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(10, 396, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
+				textField_4 = new JTextField();
+				textField_4.setColumns(10);
+				textField_4.setBounds(85, 396, 221, 23);
+				add(textField_4);
 
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
+				pers4 = new JComboBox<String>(fotos);
+				pers4.setBounds(312, 396, 127, 20);
+				add(pers4);
 
-			pers1.addActionListener(new ActionListener() {
+				pers4.addActionListener(new ActionListener() {
 
-				public void actionPerformed(ActionEvent ae) {
+					public void actionPerformed(ActionEvent ae) {
 
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
+						s = (String) pers4.getSelectedItem();
+						imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq3.setBounds(430, 360, 96, 93);
+					}
+				});
 
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
+				imgEq3 = new JLabel(new ImageIcon());
+				add(imgEq3);
 
 
+				textField_4.setFont(fuente);
 
 
-			//***************************************************************************************//
+			}
+			else if (i ==3) {
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 5");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(10, 500, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+				textField_5 = new JTextField();
+				textField_5.setColumns(10);
+				textField_5.setBounds(85, 500, 221, 23);
+				add(textField_5);
 
 
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
+				pers5 = new JComboBox<String>(fotos);
+				pers5.setBounds(312, 500, 127, 20);
+				add(pers5);
 
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
+				pers5.addActionListener(new ActionListener() {
 
-			pers2.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent ae) {
 
-				public void actionPerformed(ActionEvent ae) {
+						s = (String) pers5.getSelectedItem();
+						imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq4.setBounds(430, 464, 96, 93);
+					}
+				});
 
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
+				imgEq4 = new JLabel(new ImageIcon());
+				add(imgEq4);
 
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
+				textField_5.setFont(fuente);
+			}
+			else	if (i == 4) {
 
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 6");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(554, 84, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
+				textField_6 = new JTextField();
+				textField_6.setColumns(10);
+				textField_6.setBounds(629, 84, 221, 23);
+				add(textField_6);
 
+				pers6 = new JComboBox<String>(fotos);
+				pers6.setBounds(856, 84, 127, 20);
+				add(pers6);
 
-			//***************************************************************************************//
+				pers6.addActionListener(new ActionListener() {
 
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+					public void actionPerformed(ActionEvent ae) {
 
+						s = (String) pers6.getSelectedItem();
+						imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq5.setBounds(989, 48, 96, 93);
+					}
+				});
 
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
+				imgEq5 = new JLabel(new ImageIcon());
+				add(imgEq5);
 
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
+				textField_6.setFont(fuente);
+			}
+			else	if (i ==5) {
 
-			pers3.addActionListener(new ActionListener() {
 
-				public void actionPerformed(ActionEvent ae) {
 
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 7");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(554, 188, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
+				textField_7 = new JTextField();
+				textField_7.setColumns(10);
+				textField_7.setBounds(629, 188, 221, 23);
+				add(textField_7);
 
 
-		}
+				pers7 = new JComboBox<String>(fotos);
+				pers7.setBounds(856, 188, 127, 20);
+				add(pers7);
 
-		if (cantidad == 4) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+				pers7.addActionListener(new ActionListener() {
 
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
+					public void actionPerformed(ActionEvent ae) {
 
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
+						s = (String) pers7.getSelectedItem();
+						imgEq6.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq6.setBounds(989, 152, 96, 93);
+					}
+				});
 
-			pers1.addActionListener(new ActionListener() {
+				imgEq6 = new JLabel(new ImageIcon());
+				add(imgEq6);
 
-				public void actionPerformed(ActionEvent ae) {
+				textField_7.setFont(fuente);
 
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
+			}
+			else	if (i == 6) {
 
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
 
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 8");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(554, 292, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
+				textField_8 = new JTextField();
+				textField_8.setColumns(10);
+				textField_8.setBounds(629, 292, 221, 23);
+				add(textField_8);
 
+				pers8 = new JComboBox<String>(fotos);
+				pers8.setBounds(856, 292, 127, 20);
+				add(pers8);
 
-			//***************************************************************************************//
+				pers8.addActionListener(new ActionListener() {
 
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+					public void actionPerformed(ActionEvent ae) {
 
+						s = (String) pers8.getSelectedItem();
+						imgEq7.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq7.setBounds(989, 256, 96, 93);
+					}
+				});
 
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
+				imgEq7 = new JLabel(new ImageIcon());
+				add(imgEq7);
 
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
+				textField_8.setFont(fuente);
+			}
 
-			pers2.addActionListener(new ActionListener() {
+			else if (i == 7) {
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 9");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(554, 396, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
-				public void actionPerformed(ActionEvent ae) {
+				textField_9 = new JTextField();
+				textField_9.setColumns(10);
+				textField_9.setBounds(629, 396, 221, 23);
+				add(textField_9);
 
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
+				pers9 = new JComboBox<String>(fotos);
+				pers9.setBounds(856, 396, 127, 20);
+				add(pers9);
 
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
+				pers9.addActionListener(new ActionListener() {
 
+					public void actionPerformed(ActionEvent ae) {
 
+						s = (String) pers9.getSelectedItem();
+						imgEq8.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq8.setBounds(989, 360, 96, 93);
+					}
+				});
 
+				imgEq8 = new JLabel(new ImageIcon());
+				add(imgEq8);
 
-			//***************************************************************************************//
+				textField_9.setFont(fuente);
+			}
+			else	if (i == 8) {
 
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
+				//***************************************************************************************//
+				textField = new JTextField();
+				textField.setText("EQUIPO 10");
+				textField.setEnabled(false);
+				textField.setEditable(false);
+				textField.setBounds(554, 500, 65, 20);
+				add(textField);
+				textField.setColumns(10);
 
+				textField_10 = new JTextField();
+				textField_10.setColumns(10);
+				textField_10.setBounds(629, 500, 221, 23);
+				add(textField_10);
 
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
+				pers10 = new JComboBox<String>(fotos);
+				pers10.setBounds(856, 500, 127, 20);
+				add(pers10);
 
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
+				pers10.addActionListener(new ActionListener() {
 
-			pers3.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent ae) {
 
-				public void actionPerformed(ActionEvent ae) {
+						s = (String) pers10.getSelectedItem();
+						imgEq9.setIcon(new ImageIcon("assets/caras/"+s +".png"));
+						imgEq9.setBounds(989, 464, 96, 93);
+					}
+				});
 
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
+				imgEq9 = new JLabel(new ImageIcon());
+				add(imgEq9);
 
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-		}
-		if (cantidad == 5) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-		}
-		if (cantidad == 6) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 6");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_6 = new JTextField();
-			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 23);
-			add(textField_6);
-
-
-			pers6 = new JComboBox<String>(fotos);
-			pers6.setBounds(856, 84, 127, 20);
-			add(pers6);
-
-			pers6.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers6.getSelectedItem();
-					imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq5.setBounds(989, 48, 96, 93);
-				}
-			});
-
-			imgEq5 = new JLabel(new ImageIcon());
-			add(imgEq5);
-		}
-		if (cantidad == 7) {
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 6");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_6 = new JTextField();
-			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 23);
-			add(textField_6);
-
-
-			pers6 = new JComboBox<String>(fotos);
-			pers6.setBounds(856, 84, 127, 20);
-			add(pers6);
-
-			pers6.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers6.getSelectedItem();
-					imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq5.setBounds(989, 48, 96, 93);
-				}
-			});
-
-			imgEq5 = new JLabel(new ImageIcon());
-			add(imgEq5);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 7");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_7 = new JTextField();
-			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 23);
-			add(textField_7);
-
-
-			pers7 = new JComboBox<String>(fotos);
-			pers7.setBounds(856, 188, 127, 20);
-			add(pers7);
-
-			pers7.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers7.getSelectedItem();
-					imgEq6.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq6.setBounds(989, 152, 96, 93);
-				}
-			});
-
-			imgEq6 = new JLabel(new ImageIcon());
-			add(imgEq6);
-
-		}
-		if (cantidad == 8) {
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 6");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_6 = new JTextField();
-			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 23);
-			add(textField_6);
-
-
-			pers6 = new JComboBox<String>(fotos);
-			pers6.setBounds(856, 84, 127, 20);
-			add(pers6);
-
-			pers6.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers6.getSelectedItem();
-					imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq5.setBounds(989, 48, 96, 93);
-				}
-			});
-
-			imgEq5 = new JLabel(new ImageIcon());
-			add(imgEq5);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 7");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_7 = new JTextField();
-			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 23);
-			add(textField_7);
-
-
-			pers7 = new JComboBox<String>(fotos);
-			pers7.setBounds(856, 188, 127, 20);
-			add(pers7);
-
-			pers7.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers7.getSelectedItem();
-					imgEq6.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq6.setBounds(989, 152, 96, 93);
-				}
-			});
-
-			imgEq6 = new JLabel(new ImageIcon());
-			add(imgEq6);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 8");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_8 = new JTextField();
-			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 23);
-			add(textField_8);
-
-			pers8 = new JComboBox<String>(fotos);
-			pers8.setBounds(856, 292, 127, 20);
-			add(pers8);
-
-			pers8.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers8.getSelectedItem();
-					imgEq7.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq7.setBounds(989, 256, 96, 93);
-				}
-			});
-
-			imgEq7 = new JLabel(new ImageIcon());
-			add(imgEq7);
-
-		}
-		if (cantidad == 9) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 6");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_6 = new JTextField();
-			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 23);
-			add(textField_6);
-
-
-			pers6 = new JComboBox<String>(fotos);
-			pers6.setBounds(856, 84, 127, 20);
-			add(pers6);
-
-			pers6.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers6.getSelectedItem();
-					imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq5.setBounds(989, 48, 96, 93);
-				}
-			});
-
-			imgEq5 = new JLabel(new ImageIcon());
-			add(imgEq5);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 7");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_7 = new JTextField();
-			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 23);
-			add(textField_7);
-
-
-			pers7 = new JComboBox<String>(fotos);
-			pers7.setBounds(856, 188, 127, 20);
-			add(pers7);
-
-			pers7.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers7.getSelectedItem();
-					imgEq6.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq6.setBounds(989, 152, 96, 93);
-				}
-			});
-
-			imgEq6 = new JLabel(new ImageIcon());
-			add(imgEq6);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 8");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_8 = new JTextField();
-			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 23);
-			add(textField_8);
-
-			pers8 = new JComboBox<String>(fotos);
-			pers8.setBounds(856, 292, 127, 20);
-			add(pers8);
-
-			pers8.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers8.getSelectedItem();
-					imgEq7.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq7.setBounds(989, 256, 96, 93);
-				}
-			});
-
-			imgEq7 = new JLabel(new ImageIcon());
-			add(imgEq7);
-			
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 9");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-	
-			textField_9 = new JTextField();
-			textField_9.setColumns(10);
-			textField_9.setBounds(629, 396, 221, 23);
-			add(textField_9);
-
-			
-			pers9 = new JComboBox<String>(fotos);
-			pers9.setBounds(856, 396, 127, 20);
-			add(pers9);
-
-			pers9.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers9.getSelectedItem();
-					imgEq8.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq8.setBounds(989, 360, 96, 93);
-				}
-			});
-
-			imgEq8 = new JLabel(new ImageIcon());
-			add(imgEq8);
-
-		}
-		if (cantidad == 10) {
-			textField = new JTextField();
-			textField.setText("EQUIPO 1");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_1 = new JTextField();
-			textField_1.setBounds(85, 84, 221, 23);
-			add(textField_1);
-			textField_1.setColumns(10);
-
-			pers1 = new JComboBox<String>(fotos);
-			pers1.setBounds(312, 84, 127, 20);
-			add(pers1);
-
-			pers1.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers1.getSelectedItem();
-					imgEq.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq.setBounds(430, 48, 96, 93);
-				}
-			});
-
-			imgEq = new JLabel(new ImageIcon());
-			add(imgEq);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 2");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_2 = new JTextField();
-			textField_2.setColumns(10);
-			textField_2.setBounds(85, 188, 221, 23);
-			add(textField_2);
-
-			pers2 = new JComboBox<String>(fotos);
-			pers2.setBounds(312, 188, 127, 20);
-			add(pers2);
-
-			pers2.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers2.getSelectedItem();
-					imgEq1.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq1.setBounds(430, 152, 96, 93);
-				}
-			});
-
-			imgEq1 = new JLabel(new ImageIcon());
-			add(imgEq1);
-
-
-
-
-			//***************************************************************************************//
-
-			textField = new JTextField();
-			textField.setText("EQUIPO 3");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_3 = new JTextField();
-			textField_3.setColumns(10);
-			textField_3.setBounds(85, 292, 221, 23);
-			add(textField_3);
-
-			pers3 = new JComboBox<String>(fotos);
-			pers3.setBounds(312, 292, 127, 20);
-			add(pers3);
-
-			pers3.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers3.getSelectedItem();
-					imgEq2.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq2.setBounds(430, 256, 96, 93);
-				}
-			});
-
-			imgEq2 = new JLabel(new ImageIcon());
-			add(imgEq2);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 4");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_4 = new JTextField();
-			textField_4.setColumns(10);
-			textField_4.setBounds(85, 396, 221, 23);
-			add(textField_4);
-
-			pers4 = new JComboBox<String>(fotos);
-			pers4.setBounds(312, 396, 127, 20);
-			add(pers4);
-
-			pers4.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers4.getSelectedItem();
-					imgEq3.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq3.setBounds(430, 360, 96, 93);
-				}
-			});
-
-			imgEq3 = new JLabel(new ImageIcon());
-			add(imgEq3);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 5");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(10, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_5 = new JTextField();
-			textField_5.setColumns(10);
-			textField_5.setBounds(85, 500, 221, 23);
-			add(textField_5);
-
-
-			pers5 = new JComboBox<String>(fotos);
-			pers5.setBounds(312, 500, 127, 20);
-			add(pers5);
-
-			pers5.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers5.getSelectedItem();
-					imgEq4.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq4.setBounds(430, 464, 96, 93);
-				}
-			});
-
-			imgEq4 = new JLabel(new ImageIcon());
-			add(imgEq4);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 6");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 84, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-			textField_6 = new JTextField();
-			textField_6.setColumns(10);
-			textField_6.setBounds(629, 84, 221, 23);
-			add(textField_6);
-
-
-			pers6 = new JComboBox<String>(fotos);
-			pers6.setBounds(856, 84, 127, 20);
-			add(pers6);
-
-			pers6.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers6.getSelectedItem();
-					imgEq5.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq5.setBounds(989, 48, 96, 93);
-				}
-			});
-
-			imgEq5 = new JLabel(new ImageIcon());
-			add(imgEq5);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 7");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 188, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_7 = new JTextField();
-			textField_7.setColumns(10);
-			textField_7.setBounds(629, 188, 221, 23);
-			add(textField_7);
-
-
-			pers7 = new JComboBox<String>(fotos);
-			pers7.setBounds(856, 188, 127, 20);
-			add(pers7);
-
-			pers7.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers7.getSelectedItem();
-					imgEq6.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq6.setBounds(989, 152, 96, 93);
-				}
-			});
-
-			imgEq6 = new JLabel(new ImageIcon());
-			add(imgEq6);
-
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 8");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 292, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-
-			textField_8 = new JTextField();
-			textField_8.setColumns(10);
-			textField_8.setBounds(629, 292, 221, 23);
-			add(textField_8);
-
-			pers8 = new JComboBox<String>(fotos);
-			pers8.setBounds(856, 292, 127, 20);
-			add(pers8);
-
-			pers8.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers8.getSelectedItem();
-					imgEq7.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq7.setBounds(989, 256, 96, 93);
-				}
-			});
-
-			imgEq7 = new JLabel(new ImageIcon());
-			add(imgEq7);
-			
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 9");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 396, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-	
-			textField_9 = new JTextField();
-			textField_9.setColumns(10);
-			textField_9.setBounds(629, 396, 221, 23);
-			add(textField_9);
-
-			
-			pers9 = new JComboBox<String>(fotos);
-			pers9.setBounds(856, 396, 127, 20);
-			add(pers9);
-
-			pers9.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers9.getSelectedItem();
-					imgEq8.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq8.setBounds(989, 360, 96, 93);
-				}
-			});
-
-			imgEq8 = new JLabel(new ImageIcon());
-			add(imgEq8);
-			//***************************************************************************************//
-			textField = new JTextField();
-			textField.setText("EQUIPO 10");
-			textField.setEnabled(false);
-			textField.setEditable(false);
-			textField.setBounds(554, 500, 65, 20);
-			add(textField);
-			textField.setColumns(10);
-
-	
-			textField_10 = new JTextField();
-			textField_10.setColumns(10);
-			textField_10.setBounds(629, 500, 221, 23);
-			add(textField_10);
-
-	
-			pers10 = new JComboBox<String>(fotos);
-			pers10.setBounds(856, 500, 127, 20);
-			add(pers10);
-
-			pers10.addActionListener(new ActionListener() {
-
-				public void actionPerformed(ActionEvent ae) {
-
-					s = (String) pers10.getSelectedItem();
-					imgEq9.setIcon(new ImageIcon("assets/caras/"+s +".png"));
-					imgEq9.setBounds(989, 464, 96, 93);
-				}
-			});
-
-			imgEq9 = new JLabel(new ImageIcon());
-			add(imgEq9);
-
+				textField_10.setFont(fuente);
+			}
 
 		}
 
 	}
-
-
 
 }

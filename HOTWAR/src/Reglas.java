@@ -1,5 +1,3 @@
-package COLWAR;
-
 
 import java.awt.Color;
 import java.awt.Image;
@@ -87,7 +85,7 @@ public class Reglas extends JPanel implements ActionListener {
 				x=1;//IDENTIFICA QUE ESTAS EN LA PAGINA DERECHA
 			}
 			else if(e.getSource()==de && i == 7) {
-				JOptionPane.showInternalMessageDialog(null, "NO HAY M√ÅS PAGINAS", "Aviso de paginas", 2);
+				JOptionPane.showInternalMessageDialog(null, "NO HAY M¡S PAGINAS", "Aviso de paginas", 2);
 			}
 
 		}
@@ -106,7 +104,7 @@ public class Reglas extends JPanel implements ActionListener {
 				x =2;//IDENTIFICA QUE ESTAS EN LA PAGINA IZQUIERDA
 			}
 			else if(e.getSource()==iz && i == 1) {
-				JOptionPane.showInternalMessageDialog(null, "NO HAY M√ÅS PAGINAS", "Aviso de paginas", 2);
+				JOptionPane.showInternalMessageDialog(null, "NO HAY M¡S PAGINAS", "Aviso de paginas", 2);
 			}
 
 		}

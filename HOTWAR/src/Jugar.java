@@ -1,5 +1,3 @@
-package COLWAR;
-
 
 
 import java.awt.event.ActionEvent;

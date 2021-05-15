@@ -1,21 +1,10 @@
-
-
-
-package COLWAR;
-
-
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.JSlider;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Color;
-import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.beans.PropertyChangeEvent;
@@ -28,7 +17,7 @@ import javax.swing.event.ChangeListener;
 public class Barra extends JPanel implements ActionListener {
 	public static int x = 0,r = 0;
 
-	private JProgressBar vida;
+	private JProgressBar vida, mana;
 	private JTextField txtatak;
 	private JTextField txtdef;
 	private JSlider atk, def ;
@@ -227,7 +216,7 @@ public class Barra extends JPanel implements ActionListener {
 
 
 	}
-	@Override
+	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 
