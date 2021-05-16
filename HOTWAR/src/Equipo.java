@@ -122,6 +122,45 @@ public class Equipo{
 		
 		return imagen;
 	}
+	public static String cara(String tipo) {
+		String imagen = tipo;
+		
+		if(tipo.equals("Stickman")) {
+			imagen = "assets/caras/Stickman.png";
+		}
+		if(tipo.equals("Link")) {
+			imagen = "assets/caras/Link.png";
+		}
+		if(tipo.equals("Creeper")) {
+			imagen = "assets/caras/Creeper.png";
+		}
+		if(tipo.equals("Sonic")) {
+			imagen = "assets/caras/Sonic.png";
+		}
+		if(tipo.equals("Ratchet & Clank")) {
+			imagen = "assets/caras/Ratchet and Clank.png";
+		}
+		if(tipo.equals("Donkey Kong")) {
+			imagen = "assets/caras/Donkey Kong.png";
+		}
+		if(tipo.equals("Clank")) {
+			imagen = "assets/caras/clank.png";
+		}
+		if(tipo.equals("Mario")) {
+			imagen = "assets/caras/Mario.png";
+		}
+		if(tipo.equals("Pikachu")) {
+			imagen = "assets/caras/Pikachu.png";
+		}
+		if(tipo.equals("Sub-Zero")) {
+			imagen = "assets/caras/Sub-Zero.png";
+		}
+		if(tipo.equals("Goku")) {
+			imagen = "assets/caras/Goku.png";
+		}
+		
+		return imagen;
+	}
 	
 	
 	public int recibirmisiles(String nome, int cantidad, String nom, int hp, int misilesE, int misilesD) {

@@ -61,10 +61,17 @@ public class Eleccion extends JPanel implements ActionListener{
 
 		add(volver);
 
-		start = new JButton("EMPEZAR");
-		start.setBounds(946, 580, 110, 50);
+		
+		start = new JButton(new ImageIcon(new ImageIcon("assets/botones/start1.png").getImage().getScaledInstance(150, 72, Image.SCALE_DEFAULT)));
+		start.setBounds(900, 570, 150, 72);
+		start.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/start2.png").getImage().getScaledInstance(150, 72, Image.SCALE_DEFAULT)));
+		start.setFocusable(true);
+		start.setBorder(null);
+		start.setFocusPainted(false);
+		start.setContentAreaFilled(false);
 		add(start);
-
+		
+		
 		volver.addActionListener(this);
 		start.addActionListener(this);
 
