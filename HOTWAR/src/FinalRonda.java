@@ -28,9 +28,12 @@ public class FinalRonda extends JPanel implements ActionListener{
 	private static JButton continuar;
 	private int cantidad;
 	private String tipos[];
+	private JTextArea textArea;
 	private String nom[];
+	private JScrollPane scrollbar;
 	private JLabel rondas;
-	public FinalRonda(String toString, int cantidad, String tipos[], String nom[]) {this.cantidad = cantidad;
+	public FinalRonda(String toString, int cantidad, String tipos[], String nom[]) {
+		this.cantidad = cantidad;
 		this.tipos = tipos;
 		this.nom = nom;
 		
@@ -47,14 +50,25 @@ public class FinalRonda extends JPanel implements ActionListener{
 		continuar.setContentAreaFilled(false);
 		add(continuar);
 		continuar.addActionListener(this);
+		
 	  
-			JTextArea textArea = new JTextArea(Batalla.texto);
+			textArea = new JTextArea(Batalla.texto);
 			textArea.setForeground(new Color(51, 204, 102));
 			textArea.setEditable(false);
 			textArea.setOpaque(false);
 			textArea.setFont(new Font("Bahnschrift", Font.BOLD, 25));
 			textArea.setBounds(21, 106, 1063, 422);
+			textArea.setBorder(null);
 			add(textArea);
+			
+			scrollbar = new JScrollPane(textArea);
+			scrollbar.setBounds(16, 105, 1047, 422);
+			scrollbar.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+			scrollbar.setOpaque(false);
+			scrollbar.setBorder(null);
+			scrollbar.getViewport().setBorder(null);
+			scrollbar.getViewport().setOpaque(false);
+			add(scrollbar);
 		
 			rondas = new JLabel(new ImageIcon(new ImageIcon("assets/botones/resumen.png").getImage().getScaledInstance(240,70, Image.SCALE_DEFAULT)));
 			rondas.setBounds(430, 11, 240, 70);
@@ -63,18 +77,19 @@ public class FinalRonda extends JPanel implements ActionListener{
 			JLabel lblNewLabel = new JLabel(new ImageIcon(new ImageIcon("assets/fondos/fronda.png").getImage().getScaledInstance(1084,661, Image.SCALE_DEFAULT)));
 			lblNewLabel.setBounds(0, 0, 1084, 661);
 			add(lblNewLabel);
+			
+		
 	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		if(e.getSource()==continuar) {
+		
 			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 			Marco.remove(this);
-			Marco.getContentPane().add(new Batalla(this.cantidad, this.tipos, this.nom));
+			Marco.getContentPane().add(new Batalla(this.cantidad, this.tipos, this.nom, Eleccion.equipos));
 			Marco.setVisible(true);
 		}
 		
 	}
-	
-	
 }

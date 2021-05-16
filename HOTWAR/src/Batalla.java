@@ -82,7 +82,8 @@ public class Batalla extends JPanel {
 	private JTextField j10;
 	private JTextField textField_22;
 
-	public Batalla(int cantidad, String tipos[], String nom[]) {
+	public Batalla(int cantidad, String tipos[], String nom[], ArrayList <Equipo> equip) {
+		equipos = equip;
 		int subi [] = new int[cantidades];
 		sub = subi;
 		setBounds(100, 100, 1100, 700);
@@ -90,7 +91,7 @@ public class Batalla extends JPanel {
 		nmisiles = Equipo.getmisilestipo(tipos[equipo]);
 		fuente = new Font("Calibri",Font.BOLD, 12);
 
-
+		//diseño del panel
 		textField = new JTextField();
 		textField.setEnabled(false);
 		textField.setBounds(10, 368, 163, 40);
@@ -155,7 +156,7 @@ public class Batalla extends JPanel {
 
 		textField_2 = new JTextField();
 		textField_2.setForeground(Color.BLUE);
-		
+
 		textField_2.setText(md);
 		textField_2.setOpaque(false);
 		textField_2.setEditable(false);
@@ -244,31 +245,35 @@ public class Batalla extends JPanel {
 		String nombre;
 		String a;
 
-//creacion de personajes en la batalla
+		
+		//creacion de personajes en la batalla
 		for (int i = 0; i < cantidad+1; i++) {
-
+			
 			if (i == 1) {
 				tipo = tipos[0];//llama al tipo de personaje que coresponde a la posicion
 				nombre = nom[0];//llama al nombre del jugador de personaje
-				Equipo equipo1 = new Equipo(tipo, nombre);
+				Equipo equipo1 = new Equipo(tipo, nombre);//arraylist de equipos
+				equipos.add(equipo1);
 				lblNewLabel_2 = new JLabel(new ImageIcon(Equipo.cara(tipos[0])));//pasa la imagen correspondida desde equipos
 				lblNewLabel_2.setBounds(816, 79, 40, 40);
 				add(lblNewLabel_2);
 
 				j1 = new JTextField(nom[0]);//pasa el nombre correspondida desde equipos
-				j1.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
+				j1.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));//fuente de la letra
 				j1.setBounds(866, 78, 96, 20);
 				j1.setOpaque(false);
+				j1.setForeground(Color.WHITE);
 				j1.setBorder(null);
 				j1.setEditable(false);
 				add(j1);
 
 				textField_4 = new JTextField();
-				textField_4.setText(Equipo.gethptipo(tipos[0]) + " hp");//pasa la vida correspondida desde equipos
+				textField_4.setText(equipos.get(0).hp + " hp");//pasa la vida correspondida desde equipos
 				textField_4.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_4.setOpaque(false);
 				textField_4.setEditable(false);
 				textField_4.setBorder(null);
+				textField_4.setForeground(Color.WHITE);
 				textField_4.setBounds(866, 109, 62, 22);
 				add(textField_4);
 
@@ -276,6 +281,7 @@ public class Batalla extends JPanel {
 				tipo = tipos[1];
 				nombre = nom[1];
 				Equipo equipo2 = new Equipo(tipo, nombre);
+				equipos.add(equipo2);
 				lblNewLabel_3 = new JLabel(new ImageIcon(Equipo.cara(tipos[1])));
 				lblNewLabel_3.setBounds(944, 133, 40, 40);
 				add(lblNewLabel_3);
@@ -284,14 +290,16 @@ public class Batalla extends JPanel {
 				j2.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j2.setOpaque(false);
 				j2.setBorder(null);
+				j2.setForeground(Color.WHITE);
 				j2.setEditable(false);
 				j2.setBounds(994, 132, 96, 20);
 				add(j2);
 
 				textField_6 = new JTextField();
-				textField_6.setText(Equipo.gethptipo(tipos[1]) + " hp");
+				textField_6.setText(equipos.get(1).hp + " hp");
 				textField_6.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_6.setOpaque(false);
+				textField_6.setForeground(Color.WHITE);
 				textField_6.setEditable(false);
 				textField_6.setBorder(null);
 				textField_6.setBounds(994, 163, 62, 22);
@@ -302,6 +310,7 @@ public class Batalla extends JPanel {
 				tipo = tipos[2];
 				nombre = nom[2];
 				Equipo equipo3 = new Equipo(tipo, nombre);
+				equipos.add(equipo3);
 				lblNewLabel_4 =new JLabel(new ImageIcon(Equipo.cara(tipos[2])));
 				lblNewLabel_4.setBounds(816, 185, 40, 40);
 				add(lblNewLabel_4);
@@ -310,14 +319,16 @@ public class Batalla extends JPanel {
 				j3.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j3.setOpaque(false);
 				j3.setBorder(null);
+				j3.setForeground(Color.WHITE);
 				j3.setEditable(false);
 				j3.setBounds(866, 184, 96, 20);
 				add(j3);
 
 				textField_8 = new JTextField();
-				textField_8.setText(Equipo.gethptipo(tipos[2]) + " hp");
+				textField_8.setText(equipos.get(2).hp + " hp");
 				textField_8.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_8.setOpaque(false);
+				textField_8.setForeground(Color.WHITE);
 				textField_8.setEditable(false);
 				textField_8.setBorder(null);
 				textField_8.setBounds(866, 215, 62, 22);
@@ -328,7 +339,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[3];
 				nombre = nom[3];
-				Equipo equipo3 = new Equipo(tipo, nombre);
+				Equipo equipo4 = new Equipo(tipo, nombre);
+				equipos.add(equipo4);
 				lblNewLabel_5 = new JLabel(new ImageIcon(Equipo.cara(tipos[3])));
 				lblNewLabel_5.setBounds(944, 237, 40, 40);
 				add(lblNewLabel_5);
@@ -337,16 +349,18 @@ public class Batalla extends JPanel {
 				j4.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j4.setOpaque(false);
 				j4.setBorder(null);
+				j4.setForeground(Color.WHITE);
 				j4.setEditable(false);
 				j4.setBounds(994, 236, 96, 20);
 				add(j4);
 
 				textField_10 = new JTextField();
-				textField_10.setText(Equipo.gethptipo(tipos[3]) + " hp");
+				textField_10.setText(equipos.get(3).hp + " hp");
 				textField_10.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_10.setOpaque(false);
 				textField_10.setEditable(false);
 				textField_10.setBorder(null);
+				textField_10.setForeground(Color.WHITE);
 				textField_10.setBounds(994, 267, 62, 22);
 				add(textField_10);
 			}
@@ -354,7 +368,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[4];
 				nombre = nom[4];
-				Equipo equipo4 = new Equipo(tipo, nombre);
+				Equipo equipo5 = new Equipo(tipo, nombre);
+				equipos.add(equipo5);
 				lblNewLabel_6 = new JLabel(new ImageIcon(Equipo.cara(tipos[4])));
 				lblNewLabel_6.setBounds(816, 289, 40, 40);
 				add(lblNewLabel_6);
@@ -363,15 +378,17 @@ public class Batalla extends JPanel {
 				j5.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j5.setOpaque(false);
 				j5.setBorder(null);
+				j5.setForeground(Color.WHITE);
 				j5.setEditable(false);
 				j5.setBounds(866, 288, 96, 20);
 				add(j5);
 
 				textField_12 = new JTextField();
-				textField_12.setText(Equipo.gethptipo(tipos[4]) + " hp");
+				textField_12.setText(equipos.get(4).hp + " hp");
 				textField_12.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_12.setOpaque(false);
 				textField_12.setEditable(false);
+				textField_12.setForeground(Color.WHITE);
 				textField_12.setBorder(null);
 				textField_12.setBounds(866, 319, 62, 22);
 				add(textField_12);
@@ -382,7 +399,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[5];
 				nombre = nom[5];
-				Equipo equipo5 = new Equipo(tipo, nombre);
+				Equipo equipo6 = new Equipo(tipo, nombre);
+				equipos.add(equipo6);
 				lblNewLabel_7 = new JLabel(new ImageIcon(Equipo.cara(tipos[5])));
 				lblNewLabel_7.setBounds(944, 331, 40, 40);
 				add(lblNewLabel_7);
@@ -392,14 +410,16 @@ public class Batalla extends JPanel {
 				j6.setOpaque(false);
 				j6.setBorder(null);
 				j6.setEditable(false);
+				j6.setForeground(Color.WHITE);
 				j6.setBounds(994, 330, 96, 20);
 				add(j6);
 
 				textField_14 = new JTextField();
-				textField_14.setText(Equipo.gethptipo(tipos[5]) + " hp");
+				textField_14.setText(equipos.get(5).hp + " hp");
 				textField_14.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_14.setOpaque(false);
 				textField_14.setEditable(false);
+				textField_14.setForeground(Color.WHITE);
 				textField_14.setBorder(null);
 				textField_14.setBounds(994, 361, 62, 22);
 				add(textField_14);
@@ -409,7 +429,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[6];
 				nombre = nom[6];
-				Equipo equipo6 = new Equipo(tipo, nombre);
+				Equipo equipo7 = new Equipo(tipo, nombre);
+				equipos.add(equipo7);
 				lblNewLabel_8 = new JLabel(new ImageIcon(Equipo.cara(tipos[6])));
 				lblNewLabel_8.setBounds(816, 394, 40, 40);
 				add(lblNewLabel_8);
@@ -418,15 +439,17 @@ public class Batalla extends JPanel {
 				j7.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j7.setOpaque(false);
 				j7.setBorder(null);
+				j7.setForeground(Color.WHITE);
 				j7.setEditable(false);
 				j7.setBounds(866, 393, 96, 20);
 				add(j7);
 
 				textField_16 = new JTextField();
-				textField_16.setText(Equipo.gethptipo(tipos[6]) + " hp");
+				textField_16.setText(equipos.get(6).hp + " hp");
 				textField_16.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_16.setOpaque(false);
 				textField_16.setEditable(false);
+				textField_16.setForeground(Color.WHITE);
 				textField_16.setBorder(null);
 				textField_16.setBounds(866, 424, 62, 22);
 				add(textField_16);
@@ -437,7 +460,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[7];
 				nombre = nom[7];
-				Equipo equipo7 = new Equipo(tipo, nombre);
+				Equipo equipo8 = new Equipo(tipo, nombre);
+				equipos.add(equipo8);
 				lblNewLabel_9 = new JLabel(new ImageIcon(Equipo.cara(tipos[7])));
 				lblNewLabel_9.setBounds(944, 436, 40, 40);
 				add(lblNewLabel_9);
@@ -446,14 +470,16 @@ public class Batalla extends JPanel {
 				j8.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j8.setOpaque(false);
 				j8.setBorder(null);
+				j8.setForeground(Color.WHITE);
 				j8.setEditable(false);
 				j8.setBounds(994, 435, 96, 20);
 				add(j8);
 
 				textField_18 = new JTextField();
-				textField_18.setText(Equipo.gethptipo(tipos[7]) + " hp");
+				textField_18.setText(equipos.get(7).hp + " hp");
 				textField_18.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_18.setOpaque(false);
+				textField_18.setForeground(Color.WHITE);
 				textField_18.setEditable(false);
 				textField_18.setBorder(null);
 				textField_18.setBounds(994, 466, 62, 22);
@@ -464,7 +490,8 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[8];
 				nombre = nom[8];
-				Equipo equipo8 = new Equipo(tipo, nombre);
+				Equipo equipo9 = new Equipo(tipo, nombre);
+				equipos.add(equipo9);
 				lblNewLabel_10 = new JLabel(new ImageIcon(Equipo.cara(tipos[8])));
 				lblNewLabel_10.setBounds(816, 502, 40, 40);
 				add(lblNewLabel_10);
@@ -472,16 +499,18 @@ public class Batalla extends JPanel {
 				j9 = new JTextField(nom[8]);
 				j9.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j9.setOpaque(false);
+				j9.setForeground(Color.WHITE);
 				j9.setBorder(null);
 				j9.setEditable(false);
 				j9.setBounds(866, 501, 96, 20);
 				add(j9);
 
 				textField_20 = new JTextField();
-				textField_20.setText(Equipo.gethptipo(tipos[8]) + " hp");
+				textField_20.setText(equipos.get(8).hp + " hp");
 				textField_20.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD , 15));
 				textField_20.setOpaque(false);
 				textField_20.setEditable(false);
+				textField_20.setForeground(Color.WHITE);
 				textField_20.setBorder(null);
 				textField_20.setBounds(866, 532, 62, 22);
 				add(textField_20);
@@ -491,24 +520,27 @@ public class Batalla extends JPanel {
 
 				tipo = tipos[9];
 				nombre = nom[9];
-				Equipo equipo9 = new Equipo(tipo, nombre);
+				Equipo equipo10 = new Equipo(tipo, nombre);
+				equipos.add(equipo10);
 				lblNewLabel_11 = new JLabel(new ImageIcon(Equipo.cara(tipos[9])));
 				lblNewLabel_11.setBounds(944, 553, 40, 40);
 				add(lblNewLabel_11);
-				
+
 				j10 = new JTextField(nom[9]);
 				j10.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				j10.setOpaque(false);
+				j10.setForeground(Color.WHITE);
 				j10.setBorder(null);
 				j10.setEditable(false);
 				j10.setBounds(994, 552, 96, 20);
 				add(j10);
-				
+
 				textField_22 = new JTextField();
-				textField_22.setText(Equipo.gethptipo(tipos[9]) + " hp");
+				textField_22.setText(equipos.get(9).hp + " hp");
 				textField_22.setFont(new Font("Trebuchet MS", Font.ITALIC | Font.BOLD, 15));
 				textField_22.setOpaque(false);
 				textField_22.setEditable(false);
+				textField_22.setForeground(Color.WHITE);
 				textField_22.setBorder(null);
 				textField_22.setBounds(994, 583, 62, 22);
 				add(textField_22);
@@ -577,9 +609,9 @@ public class Batalla extends JPanel {
 					}
 
 					// aqui empieza el sistema de daño
-					//atacar(posicion, equipoma, equipomd, equipo, cantidad, tipos[equipo]);
+					atacar(posicion, equipoma, equipomd, equipo, cantidad, tipos[equipo]);
 					// Aqui acaba
-
+					vidas(cantidad); //Actualizar las vidas
 					equipo = equipo + 1;
 					if (equipo == cantidad) {
 						finalizar(cantidad, tipos, nom);
@@ -660,7 +692,7 @@ public class Batalla extends JPanel {
 		controndas.setEditable(false);
 		controndas.setHorizontalAlignment(SwingConstants.LEFT);
 		controndas.setForeground(Color.WHITE);
-		controndas.setText("0");
+		controndas.setText(cont + "");//cambiar numero de rondas
 		controndas.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 99));
 		controndas.setOpaque(false);
 		controndas.setBorder(null);
@@ -688,36 +720,37 @@ public class Batalla extends JPanel {
 		Marco.setVisible(true);
 
 	}
-	//	public void atacar(int enemigo, int equipoma, int equipomd, int tu, int cantidad, String tipo) {
-	//		int cont = 0;
-	//		int equi[] = new int[cantidad];
-	//		int equiO[] = new int[cantidad];
-	//		int previda [] = new int[cantidad];
-	//		previda[cont] = equipos.get(tu).hp;
-	//		equi[cont] = tu;
-	//		equiO[cont] = enemigo;
-	//		equipos.get(tu).misila = equipoma;
-	//		equipos.get(tu).misild = equipomd;
-	//		ataquesespeciales(tipo, tu, previda[tu], cantidad, enemigo);
-	//		equipos.get(tu).hp = equipos.get(tu).hp + equipomd;
-	//		equipos.get(enemigo).hp = equipos.get(enemigo).hp - equipoma;
-	//		
-	//		if(equipo == cantidad) {
-	//			for(int i = 0; i < cantidad; i++) {
-	//			if(sub[i] == equiO[i]+1 && sub[i] > 0) {
-	//				equipos.get(equiO[i]).misila = 0;
-	//				equipos.get(equiO[i]).misild = 0;
-	//			}
-	//			}
-	//			for(int i = 0; i < cantidad; i++) {
-	//				if(equipos.get(equi[i]).hp > previda[i]) {
-	//					equipos.get(equi[i]).hp = previda[i];
-	//				}
-	//			}
-	//			
-	//		}
-	//		cont++;
-	//	}
+	public void atacar(int enemigo, int equipoma, int equipomd, int tu, int cantidad, String tipo) {
+		int cont = 0;
+		int equi[] = new int[cantidad];
+		int equiO[] = new int[cantidad];
+		int previda [] = new int[cantidad];
+		previda[cont] = equipos.get(tu).hp;
+		equi[cont] = tu;
+		equiO[cont] = enemigo;
+		equipos.get(tu).misila = equipoma;
+		equipos.get(tu).misild = equipomd;
+		ataquesespeciales(tipo, tu, previda[tu], cantidad, enemigo);
+		equipos.get(tu).hp = equipos.get(tu).hp + (equipomd/2);
+		equipos.get(enemigo).hp = equipos.get(enemigo).hp - equipoma;
+
+		if(equipo == cantidad-1) {
+			/* Subzero da errores
+				for(int i = 0; i < cantidad; i++) {
+				if(sub[i] == equiO[i]+1 && sub[i] > 0) {
+				equipos.get(equiO[i]).misila = 0;
+					equipos.get(equiO[i]).misild = 0;
+				}
+				}*/
+			for(int i = 0; i < cantidad; i++) {
+				if(equipos.get(equi[i]).hp > previda[i]) {
+					equipos.get(equi[i]).hp = previda[i];
+				}
+			}
+
+		}
+		cont++;
+	}
 	public void ataquesespeciales(String tipo, int a, int previda, int cantidad, int enemigo) {
 		if(tipo.equals("Stickman")) {
 
@@ -777,19 +810,61 @@ public class Batalla extends JPanel {
 	}
 	public  String resum(int mA, int mD, String nom[], String equipoObj){
 		String resum = "";
+	
 		if(mA == 0) {
 			resum = nom[equipo]+" no ha atacado y se ha defendido con "+mD + " de poder de escudo\n";	
-			return resum;
+	
 		}
 		if(mD == 0) {
 			resum = nom[equipo]+" ha atacado con " + mA + " de poder de ataque a " + equipoObj +" y no se ha defendido\n";
-			return resum;
+		
 		}
 		else {
 			resum = nom[equipo]+" ha atacado con " + mA + " de poder de ataque a " + equipoObj +" y se ha defendido con "+mD + " de poder de escudo\n";
-			return resum;
+	
 		}
+		return resum;
 
+	}
+	public void vidas(int cantidad) {
+	
+		for(int i = 0; i > cantidad; i++) {
+			if(cantidad == 3) {	
+				textField_4.setText(equipos.get(0).hp +" hp");
+				textField_6.setText(equipos.get(1).hp +" hp");
+				textField_8.setText(equipos.get(2).hp +" hp");
+			}
 
+			if(cantidad == 4) {
+			
+				textField_10.setText(equipos.get(3).hp +" hp");
+			}
+			if(cantidad == 5) {
+			
+				textField_12.setText(equipos.get(4).hp +" hp");
+			}
+			if(cantidad == 6) {
+			
+				
+				textField_14.setText(equipos.get(5).hp +" hp");
+			}
+			if(cantidad == 7) {
+
+				textField_16.setText(equipos.get(6).hp +" hp");
+			}
+			if(cantidad == 8) {
+			
+				textField_18.setText(equipos.get(7).hp +" hp");
+			}
+			if(cantidad == 9) {
+			
+				textField_20.setText(equipos.get(8).hp +" hp");
+			}
+			if(cantidad == 10) {
+			
+				textField_22.setText(equipos.get(9).hp +" hp");
+			}	
+		}
+		
 	}
 }

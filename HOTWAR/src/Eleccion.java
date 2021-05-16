@@ -44,7 +44,7 @@ public class Eleccion extends JPanel implements ActionListener{
 	String s;
 	private Font fuente;
 	int cantidades;
-
+	static ArrayList<Equipo> equipos = new ArrayList<Equipo>();
 	public Eleccion(int num) {
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
@@ -112,10 +112,11 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
+					
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
@@ -141,10 +142,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
@@ -169,10 +170,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
@@ -199,10 +200,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5,s6};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText(),textField_6.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 
@@ -231,10 +232,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5,s6,s7};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 
@@ -264,10 +265,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5,s6,s7,s8};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText(),textField_8.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
@@ -297,10 +298,10 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5,s6,s7,s8,s9};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText(),textField_8.getText(),textField_9.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
@@ -331,15 +332,113 @@ public class Eleccion extends JPanel implements ActionListener{
 				else {
 					String tipos [] = {s1,s2,s3,s4,s5,s6,s7,s8,s9,s10};
 					String nom [] = {textField_1.getText(),textField_2.getText(),textField_3.getText(),textField_4.getText(),textField_5.getText(),textField_6.getText(),textField_7.getText(),textField_8.getText(),textField_9.getText(),textField_10.getText()};
-
+					creacionpersonajes(cantidades, tipos, nom);
 					JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
 					Marco.remove(this);
-					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom));
+					Marco.getContentPane().add(new Batalla(this.cantidades, tipos, nom, equipos));
 					Marco.setVisible(true);
 				}
 			}
 		}
 
+	}
+
+	private void creacionpersonajes(int cantidad, String tipos[], String nom[]) {
+		//creacion de personajes en la batalla
+		String tipo;
+		String nombre;
+				for (int i = 0; i < cantidad+1; i++) {
+
+					if (i == 1) {
+						tipo = tipos[0];//llama al tipo de personaje que coresponde a la posicion
+						nombre = nom[0];//llama al nombre del jugador de personaje
+						Equipo equipo1 = new Equipo(tipo, nombre);
+						equipos.add(equipo1);
+						
+
+					}else if (i == 2) {
+						tipo = tipos[1];
+						nombre = nom[1];
+						Equipo equipo2 = new Equipo(tipo, nombre);
+						equipos.add(equipo2);
+						
+
+					}else if (i == 3) {
+
+						tipo = tipos[2];
+						nombre = nom[2];
+						Equipo equipo3 = new Equipo(tipo, nombre);
+						equipos.add(equipo3);
+						
+
+
+					}else if (i == 4) {
+
+						tipo = tipos[3];
+						nombre = nom[3];
+						Equipo equipo4 = new Equipo(tipo, nombre);
+						equipos.add(equipo4);
+						
+					}
+					if (i == 5) {
+
+						tipo = tipos[4];
+						nombre = nom[4];
+						Equipo equipo5 = new Equipo(tipo, nombre);
+						equipos.add(equipo5);
+						
+
+
+					}
+					if (i == 6) {
+
+						tipo = tipos[5];
+						nombre = nom[5];
+						Equipo equipo6 = new Equipo(tipo, nombre);
+						equipos.add(equipo6);
+						 
+					}
+					if (i == 7) {
+
+
+						tipo = tipos[6];
+						nombre = nom[6];
+						Equipo equipo7 = new Equipo(tipo, nombre);
+						equipos.add(equipo7);
+						
+
+						
+					}
+					if (i == 8) {
+
+
+						tipo = tipos[7];
+						nombre = nom[7];
+						Equipo equipo8 = new Equipo(tipo, nombre);
+						equipos.add(equipo8);
+						
+					}
+					if (i == 9) {
+
+
+						tipo = tipos[8];
+						nombre = nom[8];
+						Equipo equipo9 = new Equipo(tipo, nombre);
+						equipos.add(equipo9);
+						
+					}
+					if (i == 10) {
+
+
+						tipo = tipos[9];
+						nombre = nom[9];
+						Equipo equipo10 = new Equipo(tipo, nombre);
+						equipos.add(equipo10);
+						
+					}
+
+				}
+		
 	}
 
 	public void plantillas(int cantidad) {

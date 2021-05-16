@@ -1,19 +1,24 @@
 public class Equipo{
 
 	String Nombre;
-	static int hp, misil;
+	int hp, misil;
 	String tipo;
 	int misila, misild;
+	int contador = 0;
 	
 	public Equipo(String tipo, String nom){
 		
 		this.Nombre=nom;
 		this.tipo = tipo;
-		this.hp=gethptipo(tipo);
-		this.misil=getmisilestipo(tipo);
+		
+			this.hp=gethptipo(tipo);
+			this.misil=getmisiltipo(tipo);
+		
+		
+		contador++;
 	}
 	//se passa la vida de cada tipo a la batalla
-	public static int gethptipo(String tipo) {
+	public int gethptipo(String tipo) {
 		if(tipo.equals("Stickman")) {
 			hp = 200;
 		}
@@ -48,39 +53,81 @@ public class Equipo{
 		return hp;
 	}
 	//se passa los missiles de cada tipo a la batalla
-	public static int getmisilestipo(String tipo) {
+	public int getmisiltipo(String tipo) {
+		int misiles = 0;
 		if(tipo.equals("Stickman")) {
-			misil = 50;
+			misiles = 50;
 		}
 		if(tipo.equals("Link")) {
-			misil = 50;
+			misiles = 50;
 		}
-		if(tipo.equals("Link")) {
-			misil = 50;
+		if(tipo.equals("Creeper")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Goku")) {
+			misiles = 50;
 		}
 		if(tipo.equals("Sonic")) {
-			misil = 50;
+			misiles = 50;
 		}
 		if(tipo.equals("Ratchet & Clank")) {
-			misil = 50;
+			misiles = 50;
 		}
 		if(tipo.equals("Donkey Kong")) {
-			misil = 20;
+			misiles = 20;
 		}
 		if(tipo.equals("Clank")) {
-			misil = 20;
+			misiles = 20;
 		}
 		if(tipo.equals("Mario")) {
-			misil = 50;
+			misiles = 50;
 		}	
 		if(tipo.equals("Pikachu")) {
-			misil = 50;
+			misiles = 50;
 		}
 		if(tipo.equals("Sub-Zero")) {
-			misil = 50;
+			misiles = 50;
 		}
 		
-		return misil;
+		return misiles;
+	}
+	public static int getmisilestipo(String tipo) {
+		int misiles = 0;
+		if(tipo.equals("Stickman")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Link")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Creeper")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Goku")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Sonic")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Ratchet & Clank")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Donkey Kong")) {
+			misiles = 20;
+		}
+		if(tipo.equals("Clank")) {
+			misiles = 20;
+		}
+		if(tipo.equals("Mario")) {
+			misiles = 50;
+		}	
+		if(tipo.equals("Pikachu")) {
+			misiles = 50;
+		}
+		if(tipo.equals("Sub-Zero")) {
+			misiles = 50;
+		}
+		
+		return misiles;
 	}
 	//se passa la respectiva imagen del jugador a la batalla
 	public static String foto(String tipo) {
