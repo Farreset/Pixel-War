@@ -29,9 +29,9 @@ public class Creditos extends JPanel implements ActionListener{
 		});
 		add(github);
 
-		volver = new JButton(new ImageIcon(new ImageIcon("assets/botones/flexa.png").getImage().getScaledInstance(112, 80, Image.SCALE_DEFAULT)));
-		volver.setBounds(40, 546, 112, 77);
-		volver.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/flexa1.png").getImage().getScaledInstance(112, 80, Image.SCALE_DEFAULT)));
+		volver = new JButton(new ImageIcon(new ImageIcon("assets/botones/homeC.png").getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT)));
+		volver.setBounds(40, 546, 80, 80);
+		volver.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/home1.png").getImage().getScaledInstance(80, 80, Image.SCALE_DEFAULT)));
 		volver.setFocusable(true);
 		volver.setBorder(null);
 		volver.setFocusPainted(false);

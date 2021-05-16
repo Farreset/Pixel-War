@@ -123,7 +123,10 @@ public class Menu extends JPanel implements ActionListener{
 			Marco.setVisible(true);
 		}
 		if(e.getSource()==boton4) {
-
+			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
+			Marco.remove(this);
+			Marco.getContentPane().add(new Ganador());
+			Marco.setVisible(true);
 		}
 		if(e.getSource()==boton5) {
 			System.exit(0); // salir en boton
