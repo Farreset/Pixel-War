@@ -1,3 +1,5 @@
+package COLWAR;
+
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -40,7 +42,7 @@ public class FinalRonda extends JPanel implements ActionListener{
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
 		
-	//assets y diseños
+	//assets y diseÃ±os
 		continuar = new JButton(new ImageIcon(new ImageIcon("assets/botones/frondab.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
 		continuar.setBounds(468, 539, 160, 76);
 		continuar.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/frondab1.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
@@ -78,6 +80,7 @@ public class FinalRonda extends JPanel implements ActionListener{
 			lblNewLabel.setBounds(0, 0, 1084, 661);
 			add(lblNewLabel);
 			
+		
 		
 	}
 

@@ -1,3 +1,5 @@
+package COLWAR;
+
 import javax.swing.JPanel;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -95,7 +97,7 @@ public class Batalla extends JPanel {
 		nmisiles = Equipo.getmisilestipo(tipos[equipo]);
 		fuente = new Font("Calibri",Font.BOLD, 12);
 
-		//diseño del panel
+		//diseÃ±o del panel
 		textField = new JTextField();
 		textField.setEnabled(false);
 		textField.setBounds(10, 368, 163, 40);
@@ -425,8 +427,6 @@ public class Batalla extends JPanel {
 			}
 			if (i == 8) {
 
-
-
 				lblNewLabel_2 = new JLabel(new ImageIcon(Equipo.cara(equipos.get(7).tipo)));
 				lblNewLabel_2.setBounds(944, 436, 40, 40);
 				add(lblNewLabel_2);
@@ -500,6 +500,7 @@ public class Batalla extends JPanel {
 			}
 
 		}
+		
 		String noms[] = new String[equipos.size()];
 		for(int i = 0; i < equipos.size(); i++) {
 			noms[i]= equipos.get(i).Nombre;
@@ -579,12 +580,12 @@ public class Batalla extends JPanel {
 					texto += resum( mA,  mD,  nom,  equipoObj);
 					//escoje la imagen del personaje
 					if((equipo+1) < equipos.size()) {
-						imgIcon=new ImageIcon(Equipo.foto(tipos[b]));
+						imgIcon=new ImageIcon(equipos.get(b).foto);
 						lblNewLabel.setIcon(imgIcon);
 
 					}
 
-					// aqui empieza el sistema de daño
+					// aqui empieza el sistema de daÃ±o
 					atacar(posicion, equipoma, equipomd, equipo, equipos.size(), tipos[equipo], previda);
 					// Aqui acaba
 					vidas(cantidad); //Actualizar las vidas
@@ -592,8 +593,10 @@ public class Batalla extends JPanel {
 					b++;
 					ronda++;
 					if (equipo >= equipos.size()) {
+						FinalRonda.contador++;//contar rondas 
 						finalizar(equipos.size(), tipos, nom);
 						c=0;
+							
 					}
 					if (equipo < equipos.size()) {
 						textField.setText(equipos.get(equipo).Nombre);
@@ -726,7 +729,7 @@ public class Batalla extends JPanel {
 		controndas.setEditable(false);
 		controndas.setHorizontalAlignment(SwingConstants.LEFT);
 		controndas.setForeground(Color.WHITE);
-		controndas.setText(cont + "");//cambiar numero de rondas
+		controndas.setText(	(FinalRonda.contador) + "");//cambiar numero de rondas
 		controndas.setFont(new Font("Gadugi", Font.BOLD | Font.ITALIC, 99));
 		controndas.setOpaque(false);
 		controndas.setBorder(null);
@@ -738,12 +741,10 @@ public class Batalla extends JPanel {
 		lblNewLabel_1.setBounds(816, 0, 284, 700);
 		add(lblNewLabel_1);
 
-
 		fondo = new JLabel();
 		fondo.setIcon(new ImageIcon(new ImageIcon("assets/fondos/fondoBatalla"+(valorDado)+".png").getImage().getScaledInstance(1200,800, Image.SCALE_DEFAULT)));
 		fondo.setBounds(0, 0, 1100, 700);
 		add(fondo);
-
 	}
 
 	public void finalizar(int cantidad, String tipos[], String nom[]) {
@@ -787,8 +788,8 @@ public class Batalla extends JPanel {
 			characters = noms;
 			comboBox.setModel(new DefaultComboBoxModel(characters));
 
-
 		}
+		
 		if(equipo == cantidad-1) {
 			/* Subzero da errores
 			for(int i = 0; i < cantidad; i++) {
@@ -797,11 +798,9 @@ public class Batalla extends JPanel {
 				equipos.get(equiO[i]).misild = 0;
 			}
 			}*/
-
-
 		}
 
-	}
+	} 
 	public void vidasmuerto(int muerto) {
 		muerto = muerto+1;
 		if(muerto == 1) {	
