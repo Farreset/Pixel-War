@@ -1,5 +1,3 @@
-package COLWAR;
-
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -27,7 +25,7 @@ public class FinalRonda extends JPanel implements ActionListener{
 	private JPanel contentPane;
 	public static String text;
 	public static int contador;
-	private static JButton continuar;
+	private static JButton continuar,guardar;
 	private int cantidad;
 	private String tipos[];
 	private JTextArea textArea;
@@ -42,9 +40,9 @@ public class FinalRonda extends JPanel implements ActionListener{
 		setBounds(100, 100, 1100, 700);
 		setLayout(null);
 		
-	//assets y diseÃ±os
+	//assets y diseños
 		continuar = new JButton(new ImageIcon(new ImageIcon("assets/botones/frondab.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
-		continuar.setBounds(468, 539, 160, 76);
+		continuar.setBounds(470, 539, 160, 76);
 		continuar.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/frondab1.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
 		continuar.setFocusable(true);
 		continuar.setBorder(null);
@@ -52,7 +50,15 @@ public class FinalRonda extends JPanel implements ActionListener{
 		continuar.setContentAreaFilled(false);
 		add(continuar);
 		continuar.addActionListener(this);
-		
+		guardar = new JButton(new ImageIcon(new ImageIcon("assets/botones/save.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
+		guardar.setBounds(924, 539, 135, 76);
+		guardar.setPressedIcon(new ImageIcon(new ImageIcon("assets/botones/save1.png").getImage().getScaledInstance(160, 72, Image.SCALE_DEFAULT)));
+		guardar.setFocusable(true);
+		guardar.setBorder(null);
+		guardar.setFocusPainted(false);
+		guardar.setContentAreaFilled(false);
+		add(guardar);
+		guardar.addActionListener(this);
 	  
 			textArea = new JTextArea(Batalla.texto);
 			textArea.setForeground(new Color(51, 204, 102));
@@ -81,7 +87,6 @@ public class FinalRonda extends JPanel implements ActionListener{
 			add(lblNewLabel);
 			
 		
-		
 	}
 
 	@Override
@@ -93,6 +98,12 @@ public class FinalRonda extends JPanel implements ActionListener{
 			Marco.getContentPane().add(new Batalla(this.cantidad, this.tipos, this.nom, Eleccion.equipos));
 			Marco.setVisible(true);
 		}
+		if(e.getSource()==guardar) {
+			JFrame Marco = (JFrame)SwingUtilities.getWindowAncestor(this);
+			Marco.remove(this);
+			Marco.getContentPane().add(new Guardar());
+			Marco.setVisible(true);
 		
+	}
 	}
 }

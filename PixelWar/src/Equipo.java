@@ -1,11 +1,10 @@
-package COLWAR;
-
 public class Equipo{
 
 	String Nombre; //Nombre del equipo
 	int hp, misil; //Vida y misiles del equipo
 	String tipo; //Tipo de personaje del equipo
 	int misila, misild; //eqnergia defensivas y ofensivas
+	
 	String foto;
 	public Equipo(String tipo, String nom){
 		
@@ -15,7 +14,8 @@ public class Equipo{
 			this.hp=gethptipo(tipo);
 			this.misil=getmisiltipo(tipo);
 		
-
+		
+		
 	}
 	//se passa la vida de cada tipo a la batalla
 	public int gethptipo(String tipo) {
@@ -187,7 +187,7 @@ public class Equipo{
 			imagen = "assets/caras/Sonic.png";
 		}
 		if(tipo.equals("Ratchet & Clank")) {
-			imagen = "assets/caras/Ratchet & Clank.png";
+			imagen = "assets/caras/Ratchet.png";
 		}
 		if(tipo.equals("Donkey Kong")) {
 			imagen = "assets/caras/Donkey Kong.png";
